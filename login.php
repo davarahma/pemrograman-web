@@ -36,16 +36,6 @@ if($ditemukan == false){
 
 
 
-$_SESSION['is_logged_in'] = true;    
-header("Location: dashboard/index.php");
-exit;
-
-if($password == $password_valid &&
-    $username == $username_valid)
-
-echo "Selamat Datang" . $username ;
-echo "<br />" ;
-echo "Password anda" . $password ;
 
 
 ?>
