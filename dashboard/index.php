@@ -8,7 +8,10 @@ if(!isset($_SESSION['is_logged_in'])) {
 
 $halaman = $_GET['halaman'] ?? 'daftar_user.php';
 
-
+$halaman_path = __DIR__ . DIRECTORY_SEPARATOR . $halaman;
+if (!is_file($halaman_path)) {
+    $halaman = 'daftar_user.php';
+}
 ?>
 
 
