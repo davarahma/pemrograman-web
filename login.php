@@ -30,9 +30,22 @@ if($ditemukan == false){
 
 }else{
     $_SESSION['is_logged_in'] = true;
+
+    // Hitung frekuensi login (per sesi)
+    if(!isset($_SESSION['login_count'])){
+        $_SESSION['login_count'] = 0;
+    }
+    $_SESSION['login_count']++;
+
+    $loginCount = (int)$_SESSION['login_count'];
+
+    // Flash message 1x tampil
+    $_SESSION['flash_welcome'] = "Selamat Datang " . htmlspecialchars($username) . " Anda telah login sebanyak " . $loginCount . " kali";
+
     header("Location: dashboard/index.php");
     exit;
 }
+
 
 
 

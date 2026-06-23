@@ -13,8 +13,20 @@ $daftar_user = $result->fetch_all(MYSQLI_ASSOC);
 <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <h1 class="mt-4">Daftar User</h1>
     <hr />
+
+    <?php if(!empty($flashWelcome)) { ?>
+    <div class="alert alert-success fade show" role="alert" style="margin-top: 10px;">
+        <?= $flashWelcome ?>
+    </div>
+    <?php } ?>
+
     <a href="index.php?halaman=tambah_user_form.php" class="btn btn-primary mb-3">Tambah User</a>
+
     <div class="table-responsive small">
+
+
+
+
         <table class="table table-striped table-sm">
             <thead>
                 <tr>

@@ -12,13 +12,15 @@ $halaman_path = __DIR__ . DIRECTORY_SEPARATOR . $halaman;
 if (!is_file($halaman_path)) {
     $halaman = 'daftar_user.php';
 }
+
+// Flash message (1x tayang)
+$flashWelcome = $_SESSION['flash_welcome'] ?? null;
+unset($_SESSION['flash_welcome']);
 ?>
 
 
-
-
-
 <!doctype html>
+
 <html lang="en" data-bs-theme="auto">
 
 <head>
